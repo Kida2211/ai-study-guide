@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudyGuideController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [StudyGuideController::class, 'index']);
+Route::post('/generate', [StudyGuideController::class, 'generate'])->name('study.generate');
+
